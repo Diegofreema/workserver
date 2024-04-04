@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon api/index.ts",
-    "dev": "tsnd --respawn -r tsconfig-paths/register --pretty --transpile-only ./api/index.ts",
+    "start": "nodemon src/index.ts",
+    "dev": "tsnd --respawn -r tsconfig-paths/register --pretty --transpile-only ./src/index.ts",
     "build": "tsc && tsc-alias"
   },
   "author": "",
