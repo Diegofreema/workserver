@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const url = process.env.MONGODB_URL!;
 mongoose
   .connect(url)
   .then(() => console.log('Connected to db'))
-  .catch((err) => console.log('connection failed', err));
+  .catch((err: any) => console.log('connection failed', err));
