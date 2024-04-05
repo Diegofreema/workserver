@@ -58,11 +58,11 @@ export const create: RequestHandler = async (req: any, res) => {
     await user.save();
     const token = generateToken(5);
     await emailVerificationSchema.create({ owner: user._id, token });
-    await sendVerificationMail(token, {
-      name,
-      email,
-      userId: user._id.toString(),
-    });
+    // await sendVerificationMail(token, {
+    //   name,
+    //   email,
+    //   userId: user._id.toString(),
+    // });
 
     return res.status(201).json({
       user: {
