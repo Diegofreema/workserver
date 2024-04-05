@@ -6,12 +6,8 @@
   "scripts": {
     "start": "node api/index.ts",
     "dev": "tsnd --respawn -r tsconfig-paths/register --pretty --transpile-only ./api/index.ts",
-    "build": "rimraf dist && tsc && tsc-alias"
+    "build": "tsc && tsc-alias"
   },
-  "pre-commit": [
-    "build",
-    "add-build"
-  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
