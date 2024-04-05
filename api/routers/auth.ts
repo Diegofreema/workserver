@@ -21,7 +21,7 @@ import { Router } from 'express';
 ///
 const router = Router();
 
-router.post('/create', validate(CreateUserSchema), create);
+router.post('/create', create);
 router.get('/profile/:id', getProfile);
 
 router.post('/sign-in', validate(SignInSchema), signIn);
