@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node api/index.js",
     "dev": "tsnd --respawn -r tsconfig-paths/register --pretty --transpile-only ./src/index.ts",
