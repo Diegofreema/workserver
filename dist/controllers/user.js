@@ -60,11 +60,6 @@ const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         yield user.save();
         const token = (0, helper_1.generateToken)(5);
         yield emailVerificationSchema_1.default.create({ owner: user._id, token });
-        yield (0, mail_1.sendVerificationMail)(token, {
-            name,
-            email,
-            userId: user._id.toString(),
-        });
         return res.status(201).json({
             user: {
                 id: user._id,
@@ -170,11 +165,6 @@ const reVerifyEmail = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     yield emailVerificationSchema_1.default.create({
         owner: userId,
         token,
-    });
-    yield (0, mail_1.sendVerificationMail)(token, {
-        name: user === null || user === void 0 ? void 0 : user.name,
-        email: user === null || user === void 0 ? void 0 : user.email,
-        userId: user === null || user === void 0 ? void 0 : user._id.toString(),
     });
     res
         .status(200)

@@ -36,24 +36,24 @@ export const sendVerificationMail = async (token: string, profile: Profile) => {
     html: generateTemplate({
       title: 'Good to have you here ' + profile.name,
       message: welcomeMessage,
-      logo: 'cid:logo',
-      banner: 'cid:welcome',
+      logo: '',
+      banner: '',
       link: '#',
       btnTitle: token,
     }),
 
-    attachments: [
-      {
-        filename: 'logo.png',
-        path: path.join(__dirname, '../newEmail/images/logo.png'),
-        cid: 'logo',
-      },
-      {
-        filename: 'welcome.png',
-        path: path.join(__dirname, '../newEmail/images/welcome.png'),
-        cid: 'welcome',
-      },
-    ],
+    // attachments: [
+    //   {
+    //     filename: 'logo.png',
+    //     path: path.join(__dirname, '../newEmail/images/logo.png'),
+    //     cid: 'logo',
+    //   },
+    //   {
+    //     filename: 'welcome.png',
+    //     path: path.join(__dirname, '../newEmail/images/welcome.png'),
+    //     cid: 'welcome',
+    //   },
+    // ],
   });
 };
 export const sendCallMail = async (
@@ -72,24 +72,24 @@ export const sendCallMail = async (
     html: generateTemplate({
       title: 'Good to have you here ' + name,
       message: welcomeMessage,
-      logo: 'cid:logo',
-      banner: 'cid:welcome',
+      logo: '',
+      banner: '',
       link: '#',
       btnTitle: token,
     }),
 
-    attachments: [
-      {
-        filename: 'logo.png',
-        path: path.join(__dirname, '../newEmail/images/logo.png'),
-        cid: 'logo',
-      },
-      {
-        filename: 'welcome.png',
-        path: path.join(__dirname, '../newEmail/images/welcome.png'),
-        cid: 'welcome',
-      },
-    ],
+    // attachments: [
+    //   {
+    //     filename: 'logo.png',
+    //     path: path.join(__dirname, '../newEmail/images/logo.png'),
+    //     cid: 'logo',
+    //   },
+    //   {
+    //     filename: 'welcome.png',
+    //     path: path.join(__dirname, '../newEmail/images/welcome.png'),
+    //     cid: 'welcome',
+    //   },
+    // ],
   });
 };
 type Options = {
@@ -109,24 +109,24 @@ export const sendForgetPasswordLink = async (options: Options) => {
     html: generateTemplate({
       title: 'Forgot Password',
       message: message,
-      logo: 'cid:logo',
-      banner: 'cid:forget_password',
+      logo: '',
+      banner: '',
       link: options.link,
       btnTitle: 'Reset Password',
     }),
 
-    attachments: [
-      {
-        filename: 'logo.png',
-        path: path.join(__dirname, '../newEmail/images/logo.png'),
-        cid: 'logo',
-      },
-      {
-        filename: 'forget_password.png',
-        path: path.join(__dirname, '../newEmail/images/forget_password.png'),
-        cid: 'forget_password',
-      },
-    ],
+    // attachments: [
+    //   {
+    //     filename: 'logo.png',
+    //     path: path.join(__dirname, '../newEmail/images/logo.png'),
+    //     cid: 'logo',
+    //   },
+    //   {
+    //     filename: 'forget_password.png',
+    //     path: path.join(__dirname, '../newEmail/images/forget_password.png'),
+    //     cid: 'forget_password',
+    //   },
+    // ],
   });
 };
 export const sendSuccessEmail = async (name: string, email: string) => {
@@ -141,23 +141,23 @@ export const sendSuccessEmail = async (name: string, email: string) => {
     html: generateTemplate({
       title: 'Password Reset Successfully',
       message: message,
-      logo: 'cid:logo',
-      banner: 'cid:forget_password',
+      logo: '',
+      banner: '',
       link: process.env.SIGN_IN_URL!,
       btnTitle: 'Login in',
     }),
 
-    attachments: [
-      {
-        filename: 'logo.png',
-        path: path.join(__dirname, '../newEmail/images/logo.png'),
-        cid: 'logo',
-      },
-      {
-        filename: 'forget_password.png',
-        path: path.join(__dirname, '../newEmail/images/forget_password.png'),
-        cid: 'forget_password',
-      },
-    ],
+    // attachments: [
+    //   {
+    //     filename: 'logo.png',
+    //     path: path.join(__dirname, '../newEmail/images/logo.png'),
+    //     cid: 'logo',
+    //   },
+    //   {
+    //     filename: 'forget_password.png',
+    //     path: path.join(__dirname, '../newEmail/images/forget_password.png'),
+    //     cid: 'forget_password',
+    //   },
+    // ],
   });
 };

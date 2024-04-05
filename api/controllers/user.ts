@@ -7,7 +7,7 @@ import {
   sendCallMail,
   sendForgetPasswordLink,
   sendSuccessEmail,
-  sendVerificationMail,
+  // sendVerificationMail,
 } from '@/utils/mail';
 import 'dotenv/config';
 import { RequestHandler } from 'express';
@@ -176,11 +176,11 @@ export const reVerifyEmail: RequestHandler = async (req, res) => {
     token,
   });
 
-  await sendVerificationMail(token, {
-    name: user?.name,
-    email: user?.email,
-    userId: user?._id.toString(),
-  });
+  // await sendVerificationMail(token, {
+  //   name: user?.name,
+  //   email: user?.email,
+  //   userId: user?._id.toString(),
+  // });
 
   res
     .status(200)

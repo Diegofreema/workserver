@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendSuccessEmail = exports.sendForgetPasswordLink = exports.sendCallMail = exports.sendVerificationMail = exports.generateMailTransporter = void 0;
 const nodemailer_1 = __importDefault(require("nodemailer"));
 const template_1 = require("../newEmail/template");
-const path_1 = __importDefault(require("path"));
 const user = process.env.USER;
 const password = process.env.PASSWORD;
 const fromEmail = process.env.FROM_EMAIL;
@@ -42,23 +41,11 @@ const sendVerificationMail = (token, profile) => __awaiter(void 0, void 0, void 
         html: (0, template_1.generateTemplate)({
             title: 'Good to have you here ' + profile.name,
             message: welcomeMessage,
-            logo: 'cid:logo',
-            banner: 'cid:welcome',
+            logo: '',
+            banner: '',
             link: '#',
             btnTitle: token,
         }),
-        attachments: [
-            {
-                filename: 'logo.png',
-                path: path_1.default.join(__dirname, '../newEmail/images/logo.png'),
-                cid: 'logo',
-            },
-            {
-                filename: 'welcome.png',
-                path: path_1.default.join(__dirname, '../newEmail/images/welcome.png'),
-                cid: 'welcome',
-            },
-        ],
     });
 });
 exports.sendVerificationMail = sendVerificationMail;
@@ -72,23 +59,11 @@ const sendCallMail = (token, email, name) => __awaiter(void 0, void 0, void 0, f
         html: (0, template_1.generateTemplate)({
             title: 'Good to have you here ' + name,
             message: welcomeMessage,
-            logo: 'cid:logo',
-            banner: 'cid:welcome',
+            logo: '',
+            banner: '',
             link: '#',
             btnTitle: token,
         }),
-        attachments: [
-            {
-                filename: 'logo.png',
-                path: path_1.default.join(__dirname, '../newEmail/images/logo.png'),
-                cid: 'logo',
-            },
-            {
-                filename: 'welcome.png',
-                path: path_1.default.join(__dirname, '../newEmail/images/welcome.png'),
-                cid: 'welcome',
-            },
-        ],
     });
 });
 exports.sendCallMail = sendCallMail;
@@ -102,23 +77,11 @@ const sendForgetPasswordLink = (options) => __awaiter(void 0, void 0, void 0, fu
         html: (0, template_1.generateTemplate)({
             title: 'Forgot Password',
             message: message,
-            logo: 'cid:logo',
-            banner: 'cid:forget_password',
+            logo: '',
+            banner: '',
             link: options.link,
             btnTitle: 'Reset Password',
         }),
-        attachments: [
-            {
-                filename: 'logo.png',
-                path: path_1.default.join(__dirname, '../newEmail/images/logo.png'),
-                cid: 'logo',
-            },
-            {
-                filename: 'forget_password.png',
-                path: path_1.default.join(__dirname, '../newEmail/images/forget_password.png'),
-                cid: 'forget_password',
-            },
-        ],
     });
 });
 exports.sendForgetPasswordLink = sendForgetPasswordLink;
@@ -132,23 +95,11 @@ const sendSuccessEmail = (name, email) => __awaiter(void 0, void 0, void 0, func
         html: (0, template_1.generateTemplate)({
             title: 'Password Reset Successfully',
             message: message,
-            logo: 'cid:logo',
-            banner: 'cid:forget_password',
+            logo: '',
+            banner: '',
             link: process.env.SIGN_IN_URL,
             btnTitle: 'Login in',
         }),
-        attachments: [
-            {
-                filename: 'logo.png',
-                path: path_1.default.join(__dirname, '../newEmail/images/logo.png'),
-                cid: 'logo',
-            },
-            {
-                filename: 'forget_password.png',
-                path: path_1.default.join(__dirname, '../newEmail/images/forget_password.png'),
-                cid: 'forget_password',
-            },
-        ],
     });
 });
 exports.sendSuccessEmail = sendSuccessEmail;
