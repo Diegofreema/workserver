@@ -8,8 +8,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "rootDir": "./api",
-    "outDir": "./dist",
+    "outDir": "dist",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./api/*"]
