@@ -11,7 +11,7 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.static('src/public'));
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.status(201).json({ message: 'Welcome to Auth ts' });
 });
 app.use('/auth', auth_1.default);
